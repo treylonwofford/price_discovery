@@ -1,0 +1,21 @@
+vector_database:
+    embedding_model_name: "ViT-B-32"
+    embedding_model_checkpoint: "openai"
+    db_directory: "db"
+    existing_text_db_directory: "data/databases/clip_textdb"
+    existing_image_db_directory: "data/databases/image_db"
+    image_collection_name: "img-collection"
+    text_collection_name: "apparel-collection"
+    is_remote: True
+    url: "https://1883d972-3d1a-4e6d-a846-86b9952741cd.us-east4-0.gcp.cloud.qdrant.io/:6333"
+
+agents:
+    llm_name: "gemini"
+    temperature: 0.3
+
+fastapi:
+    host: "0.0.0.0"
+    port: 8000
+
+streamlit_app:
+    endpoint_url: "http://localhost:8000/invoke"
